@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  --color-terracotta: #E07A5F;
+  --color-sand: #F4F1EA;
+  --color-olive: #5F6F52;
+  --color-dark: #2D2D2D;
+  --color-whatsapp: #25D366;
+  
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Lato', sans-serif;
+  --font-arabic-serif: 'Amiri', serif;
+  --font-arabic-sans: 'Cairo', sans-serif;
+}
+
+.hero-overlay {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* RTL Specific Adjustments */
+html[dir="rtl"] .font-serif {
+  font-family: var(--font-arabic-serif);
+}
+html[dir="rtl"] .font-sans {
+  font-family: var(--font-arabic-sans);
+}
+html[dir="rtl"] .fa-arrow-right {
+  transform: rotate(180deg);
+}
+
+.hotel-card img, .excursion-card img {
+  transition: transform 0.5s ease;
+}
+.hotel-card:hover img, .excursion-card:hover img {
+  transform: scale(1.05);
+}
+
+html[dir="rtl"] .text-left {
+  text-align: right;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+/* Hide Scrollbar for Carousel */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Animation */
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s infinite;
+}
